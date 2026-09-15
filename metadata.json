@@ -1,0 +1,6 @@
+{
+  "name": "StartSmart Tech Hub",
+  "description": "Premium e-learning and ICT training platform providing practical digital skills in Tamale, Ghana. Learn Today. Build Tomorrow. Lead the Future.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
