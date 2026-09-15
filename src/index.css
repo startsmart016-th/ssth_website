@@ -11,12 +11,22 @@
 .tech-grid {
   background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(22, 217, 197, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(22, 217, 197, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(22, 217, 197, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(22, 217, 197, 0.07) 1px, transparent 1px);
 }
 
 .tech-radial-glow {
-  background: radial-gradient(circle at 50% 50%, rgba(16, 191, 174, 0.15) 0%, rgba(8, 102, 216, 0.08) 40%, transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(16, 191, 174, 0.18) 0%, rgba(8, 102, 216, 0.1) 40%, transparent 70%);
+}
+
+.tech-dot-grid-light {
+  background-image: radial-gradient(circle, rgba(6, 43, 104, 0.08) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+.tech-dot-grid-dark {
+  background-image: radial-gradient(circle, rgba(22, 217, 197, 0.15) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
 }
 
 @keyframes pulse-subtle {
@@ -24,6 +34,25 @@
   50% { opacity: 0.9; transform: scale(1.03); }
 }
 
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(8px) rotate(-1deg); }
+}
+
 .animate-pulse-subtle {
   animation: pulse-subtle 4s ease-in-out infinite;
 }
+
+.animate-float-gentle {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 7s ease-in-out infinite;
+}
+

@@ -25,6 +25,7 @@ export interface Course {
   code: string;
   title: string;
   category: string;
+  domainCategory?: 'Programming' | 'Business' | 'Design' | 'Data & Spreadsheets' | 'AI & Tech' | 'Digital Literacy';
   description: string;
   level: string;
   levelTier: '100' | '200' | '300' | '400';
@@ -39,6 +40,22 @@ export interface Course {
   iconName: string;
   modules: string[];
   keyOutcomes: string[];
+}
+
+export interface TestimonialItem {
+  id: string;
+  name: string;
+  role: string;
+  organization: string;
+  courseCode: string;
+  courseTitle: string;
+  category: 'Business' | 'Programming' | 'Design' | 'Data & Analytics' | 'Remote Careers';
+  rating: number;
+  quote: string;
+  outcome: string;
+  avatarUrl: string;
+  cohort: string;
+  verified: boolean;
 }
 
 export interface PackageDeal {

@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { Course } from '../types';
 import { BRAND_CONFIG } from '../data/content';
+import { getCategoryBadgeLabel } from '../data/categories';
 
 interface CourseCardProps {
   course: Course;
@@ -107,6 +108,9 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course, onViewCourse }) 
         <div className="flex items-center justify-between gap-2">
           <span className="text-[11px] font-semibold uppercase tracking-wider text-[#0866D8]">
             {course.levelTierName}
+          </span>
+          <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200/80">
+            {getCategoryBadgeLabel(course.code)}
           </span>
         </div>
 

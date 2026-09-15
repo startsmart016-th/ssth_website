@@ -21,9 +21,26 @@ export const WhyChooseUs: React.FC = () => {
   return (
     <section
       id="why-choose-us"
-      className="py-16 sm:py-24 bg-[#F5F8FC] border-t border-slate-200/60"
+      className="py-16 sm:py-24 bg-[#F5F8FC] border-t border-slate-200/60 relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Dynamic Background Graphics */}
+      <div className="absolute inset-0 tech-dot-grid-light opacity-50 pointer-events-none" />
+      <div className="absolute -top-32 right-10 w-96 h-96 bg-teal-100/40 rounded-full blur-3xl pointer-events-none animate-pulse-subtle" />
+      <div className="absolute -bottom-20 left-10 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl pointer-events-none" />
+
+      {/* Decorative Circuit Paths */}
+      <svg
+        className="absolute bottom-0 left-0 w-80 h-80 text-[#10BFAE]/10 pointer-events-none hidden md:block"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 240 240"
+      >
+        <path d="M 0 180 L 80 180 L 140 120 L 240 120" stroke="currentColor" strokeWidth="1.5" strokeDasharray="5 5" />
+        <circle cx="80" cy="180" r="3" fill="currentColor" />
+        <circle cx="140" cy="120" r="4" fill="currentColor" />
+      </svg>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">

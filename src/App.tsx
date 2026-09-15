@@ -6,12 +6,14 @@ import { Benefits } from './components/Benefits';
 import { FeaturedCourses } from './components/FeaturedCourses';
 import { About } from './components/About';
 import { WhyChooseUs } from './components/WhyChooseUs';
+import { StudentSuccessStories } from './components/StudentSuccessStories';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { CourseModal } from './components/CourseModal';
 import { AboutModal } from './components/AboutModal';
 import { Toast, ToastData } from './components/Toast';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { GlobalInteractiveGlow } from './components/GlobalInteractiveGlow';
 import { Course } from './types';
 
 export default function App() {
@@ -43,7 +45,10 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F5F8FC] text-slate-800 selection:bg-[#10BFAE]/20 selection:text-[#062B68] overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-[#F5F8FC] text-slate-800 selection:bg-[#10BFAE]/20 selection:text-[#062B68] overflow-x-hidden relative">
+      {/* Interactive Global Ambient Cursor Glow & Click Energy Shockwaves */}
+      <GlobalInteractiveGlow />
+
       {/* Navigation Bar */}
       <Navbar onExploreCourses={scrollToCourses} />
 
@@ -73,7 +78,10 @@ export default function App() {
         {/* 6. Why Choose StartSmart Tech Hub */}
         <WhyChooseUs />
 
-        {/* 7. Contact Section & Direct Message Form (Formspree Connected) */}
+        {/* 7. Student Success Stories (Social Proof Testimonials Carousel) */}
+        <StudentSuccessStories onExploreCourses={scrollToCourses} />
+
+        {/* 8. Contact Section & Direct Message Form (Formspree Connected) */}
         <Contact onShowToast={addToast} />
       </main>
 

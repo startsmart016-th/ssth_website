@@ -91,9 +91,14 @@ export const Contact: React.FC<ContactProps> = ({ onShowToast }) => {
   return (
     <section
       id="contact"
-      className="py-16 sm:py-24 bg-[#F5F8FC] border-t border-slate-200/60 scroll-mt-16"
+      className="py-16 sm:py-24 bg-[#F5F8FC] border-t border-slate-200/60 scroll-mt-16 relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Dynamic Background Graphics */}
+      <div className="absolute inset-0 tech-dot-grid-light opacity-50 pointer-events-none" />
+      <div className="absolute top-10 left-1/4 w-96 h-96 bg-emerald-100/30 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-blue-100/40 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">

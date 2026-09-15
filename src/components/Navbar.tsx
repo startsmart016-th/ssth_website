@@ -23,7 +23,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onExploreCourses }) => {
       setIsScrolled(window.scrollY > 20);
 
       // Simple active link detection
-      const sections = ['home', 'courses', 'about', 'contact'];
+      const sections = ['home', 'courses', 'stories', 'about', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -46,6 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onExploreCourses }) => {
   const navLinks = [
     { name: 'Home', href: '#home', id: 'home' },
     { name: 'Courses', href: '#courses', id: 'courses' },
+    { name: 'Success Stories', href: '#stories', id: 'stories' },
     { name: 'About Us', href: '#about', id: 'about' },
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];

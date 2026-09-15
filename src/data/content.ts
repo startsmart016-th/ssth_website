@@ -1,4 +1,4 @@
-import { Course, HeroFeaturePoint, StatisticItem, BenefitItem, WhyChooseItem, PackageDeal } from '../types';
+import { Course, HeroFeaturePoint, StatisticItem, BenefitItem, WhyChooseItem, PackageDeal, TestimonialItem } from '../types';
 
 export const BRAND_CONFIG = {
   name: 'StartSmart Tech Hub',
