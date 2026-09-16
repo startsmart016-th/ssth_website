@@ -515,6 +515,33 @@ export const InteractiveTechBackground: React.FC<InteractiveTechBackgroundProps>
       {/* 1. Underlying animated tech gradient mesh */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#031533] via-[#062B68] to-[#073B87] opacity-95 pointer-events-none" />
 
+      {/* 1b. Real Background Imagery: Diverse people enthusiastically learning tech & coding on laptops */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
+        <img
+          src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1920&q=80"
+          alt="People and students learning tech and coding on computers in classroom"
+          referrerPolicy="no-referrer"
+          className="w-full h-full object-cover object-[center_30%] filter saturate-[1.2] contrast-[1.1] opacity-30 scale-105 transition-transform duration-1000 ease-out"
+        />
+        {/* Soft atmospheric gradient overlays to ensure text legibility while displaying learners */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#031533]/95 via-[#062B68]/75 to-[#073B87]/90 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#041E4A] via-transparent to-[#031533]/80" />
+
+        {/* Human code syntax background watermark traces */}
+        <div className="absolute top-16 left-8 font-mono text-[11px] text-[#16D9C5]/10 leading-relaxed pointer-events-none hidden md:block">
+          <p>{`// Human Coder: StartSmart Student Lab`}</p>
+          <p>{`const future = new TechCareer({ track: 'Software Engineering' });`}</p>
+          <p>{`await future.learnPracticalSkills(['React', 'TypeScript', 'Python']);`}</p>
+          <p>{`future.deployToCloud({ status: 'Job Ready' });`}</p>
+        </div>
+
+        <div className="absolute bottom-20 right-12 font-mono text-[11px] text-[#38BDF8]/10 leading-relaxed pointer-events-none hidden lg:block text-right">
+          <p>{`def build_tomorrow(student):`}</p>
+          <p>{`    skills = ["Data Analytics", "AI Foundations", "Hardware"]`}</p>
+          <p>{`    return student.lead_the_future(skills)`}</p>
+        </div>
+      </div>
+
       {/* 2. Interactive SVG Tech Circuit Layer */}
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none opacity-30 transition-opacity duration-300"
@@ -576,7 +603,7 @@ export const InteractiveTechBackground: React.FC<InteractiveTechBackgroundProps>
       {showControls && (
         <div
           id="interactive-bg-controller"
-          className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-20 pointer-events-auto flex flex-col items-end gap-2"
+          className="absolute bottom-2.5 right-2.5 sm:bottom-6 sm:right-6 z-20 pointer-events-auto flex flex-col items-end gap-1.5 max-w-[calc(100vw-1.5rem)]"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Helpful interaction hint bubble that auto-fades or dismisses */}
@@ -588,8 +615,8 @@ export const InteractiveTechBackground: React.FC<InteractiveTechBackgroundProps>
           )}
 
           {/* Control Bar Badge */}
-          <div className="flex items-center gap-1.5 p-1.5 rounded-2xl bg-[#041E4A]/80 backdrop-blur-md border border-white/15 shadow-xl shadow-[#041E4A]/40 text-xs">
-            <div className="flex items-center gap-1 px-2.5 py-1 text-[11px] font-bold text-slate-300">
+          <div className="flex items-center gap-1 sm:gap-1.5 p-1 sm:p-1.5 rounded-2xl bg-[#041E4A]/90 backdrop-blur-md border border-white/15 shadow-xl shadow-[#041E4A]/40 text-xs">
+            <div className="hidden sm:flex items-center gap-1 px-2.5 py-1 text-[11px] font-bold text-slate-300">
               <span className="w-2 h-2 rounded-full bg-[#16D9C5] animate-ping inline-block" />
               <span className="hidden md:inline">Neural Mode:</span>
             </div>
@@ -600,14 +627,14 @@ export const InteractiveTechBackground: React.FC<InteractiveTechBackgroundProps>
                 type="button"
                 id="bg-mode-constellation"
                 onClick={() => setActiveMode('constellation')}
-                className={`px-2.5 py-1 rounded-xl text-[11px] font-bold transition-all cursor-pointer flex items-center gap-1 ${
+                className={`px-2 py-1 sm:px-2.5 sm:py-1 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer flex items-center gap-1 ${
                   activeMode === 'constellation'
                     ? 'bg-[#10BFAE] text-[#062B68] shadow-sm'
                     : 'text-slate-300 hover:text-white hover:bg-white/10'
                 }`}
                 title="Interactive Connected Constellation"
               >
-                <Radio className="w-3 h-3" />
+                <Radio className="w-3 h-3 shrink-0" />
                 <span>Nodes</span>
               </button>
 
@@ -615,30 +642,30 @@ export const InteractiveTechBackground: React.FC<InteractiveTechBackgroundProps>
                 type="button"
                 id="bg-mode-flow"
                 onClick={() => setActiveMode('flow')}
-                className={`px-2.5 py-1 rounded-xl text-[11px] font-bold transition-all cursor-pointer flex items-center gap-1 ${
+                className={`px-2 py-1 sm:px-2.5 sm:py-1 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer flex items-center gap-1 ${
                   activeMode === 'flow'
                     ? 'bg-[#10BFAE] text-[#062B68] shadow-sm'
                     : 'text-slate-300 hover:text-white hover:bg-white/10'
                 }`}
                 title="Cyber Flow Matrix"
               >
-                <Layers className="w-3 h-3" />
-                <span>Cyber Flow</span>
+                <Layers className="w-3 h-3 shrink-0" />
+                <span className="hidden xs:inline sm:inline">Flow</span>
               </button>
 
               <button
                 type="button"
                 id="bg-mode-quantum"
                 onClick={() => setActiveMode('quantum')}
-                className={`px-2.5 py-1 rounded-xl text-[11px] font-bold transition-all cursor-pointer flex items-center gap-1 ${
+                className={`px-2 py-1 sm:px-2.5 sm:py-1 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer flex items-center gap-1 ${
                   activeMode === 'quantum'
                     ? 'bg-[#10BFAE] text-[#062B68] shadow-sm'
                     : 'text-slate-300 hover:text-white hover:bg-white/10'
                 }`}
                 title="Quantum Gravitational Orbits"
               >
-                <Zap className="w-3 h-3" />
-                <span>Quantum</span>
+                <Zap className="w-3 h-3 shrink-0" />
+                <span className="hidden xs:inline sm:inline">Orbit</span>
               </button>
             </div>
 
@@ -647,10 +674,10 @@ export const InteractiveTechBackground: React.FC<InteractiveTechBackgroundProps>
               type="button"
               id="bg-speed-toggle"
               onClick={() => setParticleSpeedMultiplier((prev) => (prev === 1 ? 1.75 : prev === 1.75 ? 0.4 : 1))}
-              className="px-2 py-1 rounded-xl text-[10px] font-bold text-slate-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer border-l border-white/10 pl-2 ml-0.5"
+              className="px-1.5 sm:px-2 py-1 rounded-xl text-[10px] font-bold text-slate-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer border-l border-white/10 pl-1.5 sm:pl-2 ml-0.5"
               title="Toggle animation velocity"
             >
-              Speed: {particleSpeedMultiplier}x
+              {particleSpeedMultiplier}x
             </button>
           </div>
         </div>

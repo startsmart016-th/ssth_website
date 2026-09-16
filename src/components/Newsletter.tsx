@@ -75,9 +75,29 @@ export const Newsletter: React.FC<NewsletterProps> = ({ onShowToast }) => {
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-teal-100/30 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="rounded-3xl sm:rounded-[32px] bg-gradient-to-br from-[#062B68] via-[#052357] to-[#041a42] text-white p-8 sm:p-12 lg:p-14 shadow-2xl shadow-[#062B68]/20 border border-white/10 relative overflow-hidden">
+      <div className="max-w-5xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
+        <div className="rounded-2xl sm:rounded-3xl lg:rounded-[32px] bg-gradient-to-br from-[#062B68] via-[#052357] to-[#041a42] text-white p-5 sm:p-10 lg:p-14 shadow-2xl shadow-[#062B68]/20 border border-white/10 relative overflow-hidden">
           
+          {/* Real Background Imagery: Students & tech learners collaborating on computers */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80"
+              alt="Students learning tech and working on laptops together"
+              referrerPolicy="no-referrer"
+              className="w-full h-full object-cover object-center filter saturate-[1.2] opacity-20 scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#062B68]/95 via-[#052357]/80 to-[#041a42]/95 mix-blend-multiply" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#041a42] via-transparent to-[#062B68]/80" />
+
+            {/* Human Code background watermark */}
+            <div className="absolute top-4 right-6 font-mono text-[10px] text-cyan-400/10 pointer-events-none hidden md:block text-right">
+              <p>{`// Human Code Lab: Tamale Priority Cohort`}</p>
+              <p>{`async function subscribeLearner(email: string) {`}</p>
+              <p>{`  await hub.notifyUpcomingDates({ cohort: "2026", track: "All" });`}</p>
+              <p>{`}`}</p>
+            </div>
+          </div>
+
           {/* Subtle Cyber Grid & Glowing Orbs inside the card */}
           <div className="absolute inset-0 tech-grid opacity-15 pointer-events-none" />
           <div className="absolute -top-24 -right-24 w-72 h-72 bg-[#16D9C5]/20 rounded-full blur-3xl pointer-events-none" />
@@ -86,10 +106,15 @@ export const Newsletter: React.FC<NewsletterProps> = ({ onShowToast }) => {
 
           <div className="relative z-10 max-w-3xl mx-auto text-center">
             
-            {/* Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-[#16D9C5]/40 backdrop-blur-md text-cyan-200 text-xs font-bold tracking-wider uppercase mb-5 shadow-sm">
-              <Bell className="w-3.5 h-3.5 text-[#16D9C5] animate-bounce" />
-              <span>Priority Cohort Alerts</span>
+            {/* Pill Badge with Human Code Tag */}
+            <div className="flex flex-wrap items-center justify-center gap-2 mb-4 sm:mb-5">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-[#16D9C5]/40 backdrop-blur-md text-cyan-200 text-xs font-bold tracking-wider uppercase shadow-sm">
+                <Bell className="w-3.5 h-3.5 text-[#16D9C5] animate-bounce" />
+                <span>Priority Cohort Alerts</span>
+              </div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#10BFAE]/15 border border-[#16D9C5]/30 text-cyan-200 text-[11px] font-mono">
+                <span>// Tamale Tech Hub</span>
+              </div>
             </div>
 
             {/* Headline */}
@@ -109,7 +134,7 @@ export const Newsletter: React.FC<NewsletterProps> = ({ onShowToast }) => {
             {isSubscribed ? (
               <div
                 id="newsletter-confirmed-banner"
-                className="mt-8 p-5 sm:p-6 rounded-2xl bg-white/10 border border-[#16D9C5]/40 backdrop-blur-md text-left flex flex-col sm:flex-row items-center justify-between gap-4 max-w-xl mx-auto animate-fadeIn"
+                className="mt-6 sm:mt-8 p-4 sm:p-6 rounded-2xl bg-white/10 border border-[#16D9C5]/40 backdrop-blur-md text-left flex flex-col sm:flex-row items-center justify-between gap-4 max-w-xl mx-auto animate-fadeIn"
               >
                 <div className="flex items-center gap-3.5">
                   <div className="w-10 h-10 rounded-xl bg-[#16D9C5]/20 text-[#16D9C5] flex items-center justify-center shrink-0 border border-[#16D9C5]/30">
@@ -138,9 +163,9 @@ export const Newsletter: React.FC<NewsletterProps> = ({ onShowToast }) => {
                 onSubmit={handleSubmit}
                 id="newsletter-form"
                 noValidate
-                className="mt-8 max-w-xl mx-auto"
+                className="mt-6 sm:mt-8 max-w-xl mx-auto"
               >
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 p-1.5 sm:p-2 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-inner focus-within:border-[#16D9C5]/80 focus-within:ring-2 focus-within:ring-[#16D9C5]/30 transition-all">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 p-1.5 sm:p-2 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-inner focus-within:border-[#16D9C5]/80 focus-within:ring-2 focus-within:ring-[#16D9C5]/30 transition-all">
                   
                   {/* Email Input Field */}
                   <div className="relative flex-1 flex items-center">
@@ -160,12 +185,12 @@ export const Newsletter: React.FC<NewsletterProps> = ({ onShowToast }) => {
                     />
                   </div>
 
-                  {/* Subscribe Button */}
+                  {/* Subscribe Button with min-44px touch target */}
                   <button
                     type="submit"
                     id="newsletter-subscribe-btn"
                     disabled={isSubmitting}
-                    className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-bold text-sm sm:text-base text-[#062B68] bg-gradient-to-r from-[#16D9C5] to-[#10BFAE] hover:from-[#10BFAE] hover:to-[#16D9C5] shadow-lg shadow-[#10BFAE]/30 hover:shadow-[#16D9C5]/40 active:scale-[0.98] transition-all disabled:opacity-60 disabled:cursor-not-allowed shrink-0 cursor-pointer"
+                    className="min-h-[46px] inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-bold text-sm sm:text-base text-[#062B68] bg-gradient-to-r from-[#16D9C5] to-[#10BFAE] hover:from-[#10BFAE] hover:to-[#16D9C5] shadow-lg shadow-[#10BFAE]/30 hover:shadow-[#16D9C5]/40 active:scale-[0.98] transition-all disabled:opacity-60 disabled:cursor-not-allowed shrink-0 cursor-pointer"
                   >
                     {isSubmitting ? (
                       <>
@@ -194,7 +219,7 @@ export const Newsletter: React.FC<NewsletterProps> = ({ onShowToast }) => {
             )}
 
             {/* Anti-spam & Privacy Trust Badges */}
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-slate-300">
+            <div className="mt-5 sm:mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs text-slate-300">
               <div className="flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-[#16D9C5]" />
                 <span>Zero Spam. Unsubscribe anytime.</span>
