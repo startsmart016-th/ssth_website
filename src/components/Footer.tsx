@@ -16,6 +16,7 @@ export const Footer: React.FC = () => {
     { name: 'Courses', href: '#courses' },
     { name: 'About Us', href: '#about' },
     { name: 'Contact', href: '#contact' },
+    { name: 'Newsletter', href: '#newsletter-section' },
   ];
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

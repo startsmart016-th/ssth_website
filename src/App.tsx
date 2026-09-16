@@ -8,6 +8,7 @@ import { About } from './components/About';
 import { WhyChooseUs } from './components/WhyChooseUs';
 import { StudentSuccessStories } from './components/StudentSuccessStories';
 import { Contact } from './components/Contact';
+import { Newsletter } from './components/Newsletter';
 import { Footer } from './components/Footer';
 import { CourseModal } from './components/CourseModal';
 import { AboutModal } from './components/AboutModal';
@@ -83,9 +84,12 @@ export default function App() {
 
         {/* 8. Contact Section & Direct Message Form (Formspree Connected) */}
         <Contact onShowToast={addToast} />
+
+        {/* 9. Newsletter Subscription Section */}
+        <Newsletter onShowToast={addToast} />
       </main>
 
-      {/* 8. Professional Dark Footer */}
+      {/* 10. Professional Dark Footer */}
       <Footer />
 
       {/* Interactive Modals */}

@@ -66,7 +66,17 @@ export const Hero: React.FC<HeroProps> = ({ onStartLearning, onExploreCourses })
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 pointer-events-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        {/* Glassmorphic Hero Content Container */}
+        <div
+          id="hero-glassmorphism-card"
+          className="relative rounded-3xl sm:rounded-[36px] bg-[#041e4a]/30 sm:bg-[#031c46]/35 backdrop-blur-xl border border-white/15 shadow-[0_25px_60px_-15px_rgba(3,21,51,0.7)] p-6 sm:p-10 lg:p-12 overflow-hidden ring-1 ring-white/10"
+        >
+          {/* Subtle frosted glass ambient inner reflections */}
+          <div className="absolute -top-32 -left-32 w-80 h-80 bg-gradient-to-br from-white/10 via-[#16D9C5]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-gradient-to-tl from-[#0866D8]/20 via-[#10BFAE]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
           
           {/* LEFT COLUMN: Badge, Headline, Subtitle, CTA buttons, Feature Highlights */}
           <div className="lg:col-span-7 flex flex-col space-y-6 sm:space-y-8 z-10 text-center lg:text-left items-center lg:items-start">
@@ -142,6 +152,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartLearning, onExploreCourses })
             <FounderPresentation />
           </div>
 
+        </div>
         </div>
       </div>
     </section>
