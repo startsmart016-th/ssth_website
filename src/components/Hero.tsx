@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Sparkles, BookOpen, Cpu, ShieldCheck, Terminal, Code2 } from 'lucide-react';
+import { ArrowRight, Sparkles, BookOpen, Cpu, ShieldCheck, Terminal } from 'lucide-react';
 import { BRAND_CONFIG } from '../data/content';
 import { FounderPresentation } from './FounderPresentation';
 import { HeroFeaturePoints } from './HeroFeaturePoints';
@@ -81,25 +81,14 @@ export const Hero: React.FC<HeroProps> = ({ onStartLearning, onExploreCourses })
           {/* LEFT COLUMN: Badge, Headline, Subtitle, CTA buttons, Feature Highlights */}
           <div className="lg:col-span-7 flex flex-col space-y-5 sm:space-y-7 z-10 text-center lg:text-left items-center lg:items-start">
             
-            {/* Pill/Badge Group */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2">
-              <div
-                id="hero-welcome-badge"
-                className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-white/10 hover:bg-white/15 border border-[#16D9C5]/40 backdrop-blur-md text-xs sm:text-sm font-semibold tracking-wider text-cyan-200 shadow-sm transition-all"
-              >
-                <span className="w-2 h-2 rounded-full bg-[#16D9C5] animate-ping" />
-                <Sparkles className="w-3.5 h-3.5 text-[#10BFAE]" />
-                <span className="uppercase">{BRAND_CONFIG.headlinePill}</span>
-              </div>
-
-              {/* Human Code Appearance Indicator */}
-              <div
-                id="hero-human-code-indicator"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#10BFAE]/15 border border-[#16D9C5]/35 text-[11px] sm:text-xs font-mono font-medium text-cyan-200 shadow-sm"
-              >
-                <Code2 className="w-3.5 h-3.5 text-[#16D9C5]" />
-                <span>100% Practical Human Code</span>
-              </div>
+            {/* Pill/Badge */}
+            <div
+              id="hero-welcome-badge"
+              className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white/10 hover:bg-white/15 border border-[#16D9C5]/40 backdrop-blur-md text-xs sm:text-sm font-semibold tracking-wider text-cyan-200 shadow-sm transition-all"
+            >
+              <span className="w-2 h-2 rounded-full bg-[#16D9C5] animate-ping" />
+              <Sparkles className="w-3.5 h-3.5 text-[#10BFAE]" />
+              <span className="uppercase">{BRAND_CONFIG.headlinePill}</span>
             </div>
 
             {/* Large Headline */}
@@ -158,7 +147,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartLearning, onExploreCourses })
 
           </div>
 
-          {/* RIGHT COLUMN: Human Code Studio & Executive Leadership switcher */}
+          {/* RIGHT COLUMN: Executive Leadership & Founder Presentation */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end w-full">
             <FounderPresentation />
           </div>
